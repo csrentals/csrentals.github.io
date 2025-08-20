@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chameen Vehicle Rentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Chameen Vehicle Rentals</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#fleet" class="hover:text-yellow-400">Fleet</a></li>
+          <li><a href="#booking" class="hover:text-yellow-400">Book Now</a></li>
+          <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>  <!-- Hero -->  <section class="bg-cover bg-center h-[400px] flex items-center justify-center text-white" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1500&q=80');">
+    <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center">
+      <h2 class="text-4xl font-bold mb-4">Reliable & Affordable Vehicle Rentals</h2>
+      <p class="text-lg">Van • Car • Three-wheelers available for rent</p>
+    </div>
+  </section>  <!-- Fleet -->  <section id="fleet" class="py-12 container mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-8">Our Fleet</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Van -->
+      <div class="bg-white p-6 shadow rounded-xl text-center">
+        <img src="https://images.unsplash.com/photo-1619767886558-efdc1cf4df07?auto=format&fit=crop&w=800&q=80" class="rounded-lg mb-4" alt="Van">
+        <h4 class="text-xl font-semibold">Van</h4>
+        <p class="text-gray-600">Spacious and perfect for family trips.</p>
+        <p class="mt-2 font-bold text-blue-700">Rs. 8,000/day</p>
+      </div>
+      <!-- Three-wheelers -->
+      <div class="bg-white p-6 shadow rounded-xl text-center">
+        <img src="https://images.unsplash.com/photo-1603565815973-4ec8d1b37f0f?auto=format&fit=crop&w=800&q=80" class="rounded-lg mb-4" alt="Three-wheeler">
+        <h4 class="text-xl font-semibold">Three-Wheelers (x3)</h4>
+        <p class="text-gray-600">Affordable and convenient for city rides.</p>
+        <p class="mt-2 font-bold text-blue-700">Rs. 2,000/day</p>
+      </div>
+      <!-- Car -->
+      <div class="bg-white p-6 shadow rounded-xl text-center">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80" class="rounded-lg mb-4" alt="Car">
+        <h4 class="text-xl font-semibold">Car</h4>
+        <p class="text-gray-600">Comfortable and stylish for your travels.</p>
+        <p class="mt-2 font-bold text-blue-700">Rs. 5,500/day</p>
+      </div>
+    </div>
+  </section>  <!-- Booking Form -->  <section id="booking" class="py-12 bg-gray-100">
+    <div class="container mx-auto max-w-2xl bg-white p-8 rounded-xl shadow">
+      <h3 class="text-3xl font-bold text-center mb-6">Book Your Ride</h3>
+      <form id="bookingForm" class="space-y-4">
+        <input type="text" id="name" placeholder="Full Name" class="w-full p-3 border rounded" required>
+        <input type="tel" id="phone" placeholder="Phone Number" class="w-full p-3 border rounded" required>
+        <select id="vehicle" class="w-full p-3 border rounded" required>
+          <option value="">Select Vehicle</option>
+          <option>Van</option>
+          <option>Three-wheeler</option>
+          <option>Car</option>
+        </select>
+        <input type="date" id="start" class="w-full p-3 border rounded" required>
+        <input type="date" id="end" class="w-full p-3 border rounded" required>
+        <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded-lg font-bold hover:bg-blue-700">
+          Submit Booking
+        </button>
+      </form>
+    </div>
+  </section>  <!-- Contact -->  <section id="contact" class="py-12 container mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+    <p class="mb-2">📍 Malabe, Sri Lanka</p>
+    <p class="mb-2">📞 +94 71 234 5678</p>
+    <p class="mb-2">💬 WhatsApp available</p>
+    <p class="mb-2">✉ rentals@chameen.lk</p>
+  </section>  <!-- Footer -->  <footer class="bg-blue-900 text-white text-center py-6 mt-8">
+    <p>&copy; 2025 Chameen Vehicle Rentals. All rights reserved.</p>
+  </footer>  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let vehicle = document.getElementById("vehicle").value;
+      let start = document.getElementById("start").value;
+      let end = document.getElementById("end").value;
+
+      let message = `Hello, I would like to book a vehicle.%0A
+      Name: ${name}%0A
+      Phone: ${phone}%0A
+      Vehicle: ${vehicle}%0A
+      From: ${start}%0A
+      To: ${end}`;
+
+      // Replace with your WhatsApp number (Sri Lanka country code +94)
+      let whatsappNumber = "94712345678";  
+
+      let url = https://wa.me/${whatsappNumber}?text=${message};
+      window.open(url, "_blank");
+    });
+  </script></body>
+</html>
